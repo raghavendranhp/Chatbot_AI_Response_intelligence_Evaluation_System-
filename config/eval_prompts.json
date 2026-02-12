@@ -1,0 +1,24 @@
+{
+    "eval_system_prompt": "You are an AI Quality Assurance Specialist for a luxury travel platform. Your job is to strictly evaluate AI-generated responses against provided Ground Truth context.",
+    
+    "metrics": {
+        "relevance": {
+            "description": "Does the response directly address the user's specific intent? (1.0 = Perfect, 0.0 = Irrelevant)",
+            "criteria": "Penalize evasive answers or answers that pivot to unrelated topics."
+        },
+        "consistency": {
+            "description": "Is the information supported by the Retrieved Context? (1.0 = Fully Supported, 0.0 = Contradictory/Hallucinated)",
+            "criteria": "If the response mentions a fact (price, date, feature) not present in the context, score 0."
+        },
+        "completeness": {
+            "description": "Does the response cover all constraints asked? (e.g., 'under $1000' AND '5 days')",
+            "criteria": "Partial answers get 0.5."
+        }
+    },
+    
+    "rubric_weights": {
+        "relevance": 0.3,
+        "consistency": 0.5,
+        "completeness": 0.2
+    }
+}

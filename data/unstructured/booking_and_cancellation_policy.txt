@@ -1,0 +1,8 @@
+Booking Policy:
+- A minimum advance payment of 25% is required to confirm a cruise booking.
+- Full payment must be completed 30 days prior to departure.
+
+Cancellation Policy:
+- Cancellation 30 days before departure: Full refund (excluding taxes)
+- Cancellation 15–29 days: 50% refund
+- Cancellation within 14 days: No refund

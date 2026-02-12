@@ -1,0 +1,31 @@
+cruise_id,cruise_name,start_city,end_city,duration_days,price_usd,category
+CRZ001,Nile Explorer,Luxor,Aswan,4,850,Luxury
+CRZ002,Pharaoh Classic,Cairo,Luxor,5,950,Premium
+CRZ003,Royal Nile,Luxor,Aswan,3,700,Standard
+CRZ004,Cleopatra Dream,Aswan,Kom Ombo,4,820,Luxury
+CRZ005,Ancient Wonders,Luxor,Edfu,5,900,Premium
+CRZ006,Golden Nile,Cairo,Aswan,7,1500,Luxury
+CRZ007,Heritage Cruise,Luxor,Esna,4,780,Standard
+CRZ008,Sunset Nile,Aswan,Luxor,3,650,Budget
+CRZ009,Egyptian Majesty,Cairo,Luxor,6,1200,Luxury
+CRZ010,Mystic Nile,Luxor,Aswan,4,830,Premium
+CRZ011,Nile Serenity,Aswan,Luxor,5,890,Premium
+CRZ012,Dynasty Cruise,Cairo,Edfu,6,1100,Luxury
+CRZ013,Legacy Nile,Luxor,Kom Ombo,4,800,Standard
+CRZ014,Desert & Nile,Cairo,Aswan,5,980,Premium
+CRZ015,Blue Nile Escape,Aswan,Edfu,3,620,Budget
+CRZ016,Imperial Egypt,Cairo,Luxor,7,1600,Luxury
+CRZ017,Sacred Nile,Luxor,Aswan,4,870,Premium
+CRZ018,Temple Route,Aswan,Luxor,5,910,Standard
+CRZ019,Timeless Egypt,Cairo,Aswan,6,1300,Luxury
+CRZ020,Nile Odyssey,Luxor,Edfu,4,840,Premium
+CRZ021,Royal Heritage,Cairo,Luxor,5,1020,Luxury
+CRZ022,Nile Essence,Aswan,Luxor,3,690,Budget
+CRZ023,Pharaoh Path,Luxor,Kom Ombo,4,810,Standard
+CRZ024,Eternal Nile,Cairo,Aswan,7,1550,Luxury
+CRZ025,Classic Egypt,Luxor,Aswan,5,920,Premium
+CRZ026,Nile Horizon,Aswan,Edfu,4,760,Standard
+CRZ027,Grand Pharaoh,Cairo,Luxor,6,1250,Luxury
+CRZ028,Hidden Temples,Luxor,Esna,3,640,Budget
+CRZ029,Nile Prestige,Aswan,Luxor,5,980,Premium
+CRZ030,Ancient Nile,Luxor,Aswan,4,860,Standard

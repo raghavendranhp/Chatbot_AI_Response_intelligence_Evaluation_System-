@@ -1,0 +1,4 @@
+Cruise_ID,Cruise_Name,Cruise_Type,Duration_Days,Price_Per_Person_USD,Destinations,Best_Season,Amenities
+EGY001,Royal Nile Luxury Cruise,Nile,5,1800,"Luxor, Aswan",Oct-Apr,"Pool, Spa, Fine Dining"
+EGY002,Classic Nile Explorer,Nile,4,1200,"Luxor, Edfu, Kom Ombo, Aswan",Nov-Mar,"Cultural Shows, WiFi"
+EGY003,Red Sea Coral Cruise,Red Sea,6,1500,"Hurghada, Sharm El Sheikh",Mar-Jun,"Diving, Snorkeling"
