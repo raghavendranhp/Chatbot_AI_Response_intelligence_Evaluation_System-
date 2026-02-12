@@ -4,7 +4,7 @@ import pandas as pd
 from src.orchestrator import CruiseOrchestrator
 from evaluation.engine import EvaluationEngine
 
-# --- Configuration ---
+
 GROUND_TRUTH_PATH = "data/ground_truth/Egypt_Cruise_GroundTruth_Dataset.csv"
 SAMPLE_QUERIES = [
     # 1. Simple Fact (Should pass easily)
@@ -34,11 +34,11 @@ SAMPLE_QUERIES = [
 
 def main():
     print("="*60)
-    print("🚀 INITIALIZING AI RESPONSE INTELLIGENCE SYSTEM")
+    print("INITIALIZING AI RESPONSE INTELLIGENCE SYSTEM")
     print("="*60)
 
-    # 1. Initialize the Chatbot (The System Under Test)
-    # We use your existing Orchestrator
+    # 1. Initialize the Chatbot 
+    
     try:
         chatbot = CruiseOrchestrator()
         print("[INFO] Chatbot Orchestrator loaded successfully.")
@@ -47,12 +47,9 @@ def main():
         sys.exit(1)
 
     # 2. Initialize the Evaluator (The Judge)
-    # We pass the chatbot's LLM function so the Judge uses the same brain
-    # (Assuming chatbot.llm_client.generate_text exists or similar)
+    
     try:
-        # Note: Adjust 'chatbot.generate_text' to match your actual LLM method name
-        # If your Orchestrator doesn't expose the raw LLM, we might need a wrapper.
-        # For now, we assume the orchestrator has a method we can use.
+        
         evaluator = EvaluationEngine(
             llm_callable=chatbot.llm_client.generate_response, 
             ground_truth_path=GROUND_TRUTH_PATH
@@ -66,20 +63,18 @@ def main():
     results = []
 
     print("\n" + "="*60)
-    print("🧪 STARTING BATCH EVALUATION")
+    print(" STARTING BATCH EVALUATION")
     print("="*60)
 
     for i, query in enumerate(SAMPLE_QUERIES, 1):
-        print(f"\n🔹 TEST CASE {i}: '{query}'")
+        print(f"\n TEST CASE {i}: '{query}'")
         
         # A. Get Chatbot Response
-        # We assume answer_query returns (response_text, retrieved_context)
-        # If it only returns text, we pass empty context to the evaluator
+       
         try:
             response = chatbot.process_query(query)
             
-            # Extract text and context if your orchestrator returns a dict/object
-            # Adjust these keys based on your actual src/orchestrator.py return format
+           
             if isinstance(response, dict):
                 answer_text = response.get("answer", "")
                 context_text = response.get("context", "")
@@ -87,10 +82,10 @@ def main():
                 answer_text = str(response)
                 context_text = "" # Context missing, Evaluation will be partial
                 
-            print(f"   🤖 AI Answer: {answer_text[:100]}...")
+            print(f"   AI Answer: {answer_text[:100]}...")
             
         except Exception as e:
-            print(f"   ❌ Chatbot Failed: {e}")
+            print(f"    Chatbot Failed: {e}")
             continue
 
         # B. Evaluate Response
@@ -102,18 +97,18 @@ def main():
             status = eval_report['status']
             flags = eval_report['flags']
             
-            print(f"   ⚖️  Score: {score}/1.0  [{status}]")
+            print(f"     Score: {score}/1.0  [{status}]")
             if flags:
-                print(f"   🚩 Flags: {flags}")
+                print(f"    Flags: {flags}")
             
             results.append(eval_report)
             
         except Exception as e:
-            print(f"   ❌ Evaluation Failed: {e}")
+            print(f"    Evaluation Failed: {e}")
 
-    # 3. Final Summary
+    # Final Summary
     print("\n" + "="*60)
-    print("📊 FINAL DEMO REPORT")
+    print(" FINAL DEMO REPORT")
     print("="*60)
     
     df = pd.DataFrame(results)
@@ -123,7 +118,7 @@ def main():
         print(f"Pass Rate: {len(df[df['status'] == 'PASS']) / len(df) * 100:.1f}%")
         
         # Check for Feedback Signals
-        print("\n🔍 SYSTEM TUNING SIGNALS:")
+        print("\n SYSTEM TUNING SIGNALS:")
         report = evaluator.feedback.generate_report()
         if isinstance(report, dict) and "tuning_recommendations" in report:
             for rec in report["tuning_recommendations"]:
